@@ -1,0 +1,25 @@
+@CleanCore.WebApi_HostAddress = http://localhost:5080
+
+### Register
+POST {{CleanCore.WebApi_HostAddress}}/api/auth/register
+Content-Type: application/json
+
+{
+  "email": "ada@example.com",
+  "password": "Password1",
+  "firstName": "Ada",
+  "lastName": "Lovelace"
+}
+
+### Login
+POST {{CleanCore.WebApi_HostAddress}}/api/auth/login
+Content-Type: application/json
+
+{
+  "email": "ada@example.com",
+  "password": "Password1"
+}
+
+### Current user
+GET {{CleanCore.WebApi_HostAddress}}/api/auth/me
+Authorization: Bearer {{accessToken}}
