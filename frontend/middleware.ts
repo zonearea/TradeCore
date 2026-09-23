@@ -1,18 +1,13 @@
+/**
+ * Next.js middleware — Local-First masaüstü modu.
+ *
+ * Eskiden /dashboard için refreshToken yoksa /login'e atıyordu.
+ * Kişisel kokpitte giriş zorunluluğu yoktur; istekler olduğu gibi geçer.
+ */
 import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
 
-export function middleware(request: NextRequest) {
-  const hasSession = Boolean(request.cookies.get("refreshToken")?.value);
-  const { pathname } = request.nextUrl;
-
-  if (pathname.startsWith("/dashboard") && !hasSession) {
-    return NextResponse.redirect(new URL("/login", request.url));
-  }
-
-  if ((pathname === "/login" || pathname === "/register") && hasSession) {
-    return NextResponse.redirect(new URL("/dashboard", request.url));
-  }
-
+export function middleware(_request: NextRequest) {
   return NextResponse.next();
 }
 

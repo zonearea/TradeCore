@@ -13,8 +13,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "CleanCore",
-  description: "Clean Architecture boilerplate",
+  title: "TradeCore Terminal",
+  description: "Kişisel OLED finans ve borsa terminali",
 };
 
 export default function RootLayout({

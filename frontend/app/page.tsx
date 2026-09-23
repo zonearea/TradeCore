@@ -1,7 +1,9 @@
-import { cookies } from "next/headers";
+/**
+ * Ana sayfa — uygulama açılır açılmaz masaüstü kokpite gider.
+ * Local-First: oturum çerezi kontrol edilmez.
+ */
 import { redirect } from "next/navigation";
 
-export default async function HomePage() {
-  const jar = await cookies();
-  redirect(jar.get("refreshToken") ? "/dashboard" : "/login");
+export default function HomePage() {
+  redirect("/dashboard");
 }

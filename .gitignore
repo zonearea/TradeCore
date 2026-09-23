@@ -482,3 +482,18 @@ $RECYCLE.BIN/
 
 # Vim temporary swap files
 *.swp
+
+# TradeCore Python
+tradecore.db
+server/.venv/
+*.db
+__pycache__/
+*.pyc
+.venv/
+
+
+# PyInstaller
+build/
+dist/
+*.spec
+
